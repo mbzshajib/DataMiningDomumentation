@@ -4,18 +4,20 @@
 .mtj.tmp/
 
 # Package Files #
-/**/*.jar
-*.war
-*.ear
-*.log
-*.fls
-*.fdb_latexmk
-*.dvi
-*.synctex.gz
-*.lof
-*.pdf
-*.gz
-*.aux
+**/*.jar
+**/*.war
+**/*.ear
+**/*.log
+**/*.fls
+**/*.fdb_latexmk
+**/*.dvi
+**/*.synctex.gz
+**/*.lof
+**/*.pdf
+**/*.gz
+**/*.aux
+**/*.out
+**/*.toc
 
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
