@@ -9,15 +9,6 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 
-%\usepackage{geometry}
-% \geometry{
-% a4paper,
-% total={210mm,297mm},
-% left=20mm,
-% right=20mm,
-% top=20mm,
-% bottom=20mm,
-% }
 
 \begin{document}
 \listoffigures
@@ -26,8 +17,8 @@
  \item Some text goes here . . .
   \begin{algorithm}
    \caption{Merge Sort}
-    \begin{algorithmic}[1]
-      \Function{Merge}{$A,p,q,r$}\Comment{Where A - array, p - left, q - middle, r - right}
+    \begin{algorithmic}
+      \Procedure{Merge}{$A,p,q,r$}\Comment{Where A - array, p - left, q - middle, r - right}
 
         \State ${n_1} = q - p + 1$
         \State ${n_2} = r - q$
@@ -54,7 +45,7 @@
                 \State $j = j + 1$
             \EndIf
         \EndFor
-       \EndFunction
+       \EndProcedure
 
 \end{algorithmic}
 \end{algorithm}
