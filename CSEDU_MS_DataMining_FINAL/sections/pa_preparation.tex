@@ -1,0 +1,11 @@
+%\documentclass{article}
+%\begin{document}
+
+
+In this section we will describe the prefix value \emph{U\textsuperscript{cap}} calculation. For this calculation we earlier proposed an equation REF EQN. From this equation we can create \emph{U\textsuperscript{cap}} for each item in a transaction. This equation says that, for each item in a transaction, if item is the first item in a transaction than item's existential probability is its \emph{U\textsuperscript{cap}}  value.Otherwise item's \emph{U\textsuperscript{cap}} is max of previous items existential probability multiplied by item's  own existential probability. 
+For example let TABLE TRANSAC REF T1 is \emph{a(0.9), c(0.6), d(0.5), e(0.2)}. 
+In this transaction item \emph{a(0.9)} is the first item. So its \emph{U\textsuperscript{cap}} is 0.9. 
+For second item, \emph{c(0.60)} previous item is only \emph{a(0.90)}. So c's $\emph{U\textsuperscript{cap}} = 0.9*0.6 = 0.54$. 
+For third item, \emph{d(0.50)} there are two items before it, \emph{a(0.9)} and \emph{c(0.6)}. Among them \emph{a} has max existential probability, that is \emph{0.9}. So \emph{d's } $\emph{U\textsuperscript{cap}} = 0.9*0.5 = 0.45$. 
+For fourth item \emph{e(0.2)} there are three items before it, \emph{a(0.9)} ,\emph{c(0.6)} and \emph{d(0.5)}. Among them \emph{a} has max existential probability is \emph{0.9}. So \emph{e's}  $\emph{U\textsuperscript{cap}} = 0.9*0.2 = 0.45$. Thus we can calculate each item's \emph{U\textsuperscript{cap}} value for a transaction. For easier understanding we have calculated all the item's \emph{U\textsuperscript{cap}} of TABLE REF and put into TABLE REF.
+%\end{document}

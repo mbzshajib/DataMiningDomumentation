@@ -2,30 +2,47 @@
 \usepackage{fixltx2e}	
 \usepackage[english]{babel}	
 \usepackage[nottoc]{tocbibind}
+\usepackage{graphicx}  
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{fixltx2e}
+\usepackage{array}
+
+
 \begin{document}
-\tableofcontents
 \chapter{Our Proposed Approaches}
-\input{our_proposed_approach_intro.tex}
-\\ \\
+\input{pa_intro.tex}
+\newpage
 
 
-\section{Analysis Uncertain Stream Data Properties}
-\subsection{Stream Property}
-\subsection{Uncertainty Property}
-\noindent
-For expected support calculation in an uncertain database we get the following equation\\
-\input{../example/eqn_min_sup.tex}
-\section{Preliminaries}
-
+%\section{Analysis Uncertain Stream Data Properties}
+%Hello World
+%\input{../example/table_uncertain_transaction.tex}
+%\subsection{Stream Property}
+%\subsection{Uncertainty Property}
+%For expected support calculation in an uncertain database we get the following equation\\
+%\input{../example/eqn_min_sup.tex}
+%\newpage
+%\section{Preliminaries}
+%\paragraph*
+%This is Definitions and Preliminaries.
+%\input{../example/table_uncertain_transaction_batch.tex}
+\newpage
 \section{Mining Frequent Patterns from Uncertain Databases}
+Our proposed algorithm is divided into four parts. (1) Giving each item in a transaction a prefix value is called \emph{U\textsuperscript{cap}}. (2) insert transaction into \emph {US-tree}. (3) sliding the \emph {US-tree} (4) mining the \emph {US-tree} (\emph{USFP-growth}) and (5) Eliminating false positive (not frequent but exists in frequent item set) . For simulating our approach we consider Table~\ref{tab:ex_u} as uncertain stream data. For this simulation we consider window size as 2 and batch size 3. That means 3 transactions creates a batch and 2 batches create a window. After completing window construction (inserting batch 1 and 2 the tree is completed. When new transactions comes we slide the window. That means we remove oldest batch batch 1 and put batch 2 as the old batch. Then insert new batch in the tree as batch 3. So for window size 2 the tree always contains 2 batches. Thus the tree always holds the newest information. In next subsections we will elaborately explain our approach of every steps.
+\subsection{Assigning Prefix Value}
+\input{pa_preparation}
 \subsection{US-tree Construction}
+\input{pa_tree}
 \subsection{Sliding Window}
+\input{pa_slide_window}
 \subsection{Mining US-tree : FPUS-growth}
+\input{pa_mining}
 \subsection{False positive reduction}
+\input{pa_elimination}
 \subsection{Algorithm}
+\input{pa_algorithm}
 \section{Summary}
-\bibliographystyle{simple}
-
-\bibliography{bibiography}
+\input{pa_summary}
 
 \end{document}
