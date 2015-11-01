@@ -1,0 +1,53 @@
+%\documentclass[a4paper]{article}
+%
+%\usepackage[english]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{graphicx}
+%\usepackage[colorinlistoftodos]{todonotes}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%
+%
+%\begin{document}
+%\listoffigures
+\begin{enumerate}
+
+ \item Some text goes here . . .
+  \begin{algorithm}
+   \caption{Merge Sort}
+    \begin{algorithmic}
+      \Procedure{Merge}{$A,p,q,r$}\Comment{Where A - array, p - left, q - middle, r - right}
+
+        \State ${n_1} = q - p + 1$
+        \State ${n_2} = r - q$
+        \State Let $L[1 \ldots {n_1} + 1]$ and $R[1 \ldots {n_2} + 1]$ be new arrays
+        \For{$i = 1$ to ${n_1}$}
+            \State $L[i] = A[p + i - 1]$
+        \EndFor
+        \For{$j = 1$ to ${n_2}$}
+            \State $R[i] = A[q + j]$
+        \EndFor
+        \State $L[{n_1} + 1] =  \infty $
+        \State $R[{n_2} + 1] =  \infty $
+        \State $i = 1$
+        \State $j = 1$
+        \For{$k = p$ to $r$}
+            \If {$L[i] < R[j]$}
+                \State $A[k] = L[i]$
+                \State $i = i + 1$
+            \ElsIf {$L[i] > R[j]$}
+                \State $A[k] = R[j]$
+                \State $j = j + 1$
+            \Else
+                \State $A[k] = - \infty$ \Comment{We mark the duplicates with the largest negative integer}
+                \State $j = j + 1$
+            \EndIf
+        \EndFor
+       \EndProcedure
+
+\end{algorithmic}
+\end{algorithm}
+\end{enumerate}
+%\end{document}
