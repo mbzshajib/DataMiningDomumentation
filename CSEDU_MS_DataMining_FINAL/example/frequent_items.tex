@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{fixltx2e}
+\usepackage{caption}
+\usepackage{graphicx}
+\begin{document}
+\fbox{ 
+{\centering
+\begin{minipage}{0.60\textwidth}
+  \centering
+  
+	\begin{center}
+	\begin{tabular}{ |c| } 
+ 	\hline
+ 		Frequent Items\\ \hline\hline
+ 		a \\ \hline
+ 		b \\ \hline
+ 		c \\ \hline
+ 		d \\ \hline
+ 		dc \\ \hline
+ 		da \\ \hline
+ 		dca \\ \hline
+ 		ca \\ \hline
+\end{tabular}
+\end{center}  
+  
+  
+  \captionof{table}{\emph{Frequent Items}\\(with false positive)}
+\end{minipage}
+\hfill
+\begin{minipage}{0.40\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{../images/frequent_tree.jpg}
+  \captionof{figure}{\emph{Frequent Item Tree} }
+\end{minipage}
+
+}
+}
+
+\end{document}
