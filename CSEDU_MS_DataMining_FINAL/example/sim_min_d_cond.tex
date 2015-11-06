@@ -1,12 +1,10 @@
-\documentclass{article}
-\usepackage{caption}
-\usepackage{graphicx}
-\begin{document}
-\fbox{ 
-{\centering
+%\documentclass{article}
+%\usepackage{caption}
+%\usepackage{graphicx}
+%\begin{document}
+\begin{figure}
 \begin{minipage}{0.40\textwidth}
   \centering
-  
 	\begin{center}
 	\begin{tabular}{ |c|c| } 
  	\hline
@@ -16,8 +14,6 @@
  		
 \end{tabular}
 \end{center}  
-
-  
   \captionof{table}{\emph{d-cond tree} Header }
 \end{minipage}
   \hfill
@@ -44,11 +40,48 @@
  		
 \end{tabular}
 \end{center}  
-
-  
-  \captionof{table}{ \emph{Frequent Patterns for d} }
+  \captionof{table}{ \emph{Frequent Patterns} }
 \end{minipage}
-}
-}
+\end{figure}
+\begin{figure}
+\begin{minipage}{0.30\textwidth}
+  \centering
+	\begin{center}
+	\begin{tabular}{ |c|c| } 
+ 	\hline
+ 		Item&Value\\ \hline\hline
+ 		a &  .99  	\\ \hline
+ 		b &  .54   	\\ \hline
+\end{tabular}
+\end{center}  
+  \captionof{table}{Header }
+\end{minipage}
+  \hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \hfill
+  \includegraphics[width=.8\textwidth, height=3.5cm]{../images/C_COND.jpg}
+  \captionof{figure}{\emph{c-cond Tree}}
+  \hfill  
+\end{minipage}
+\hfill
+\begin{minipage}{0.30\textwidth}
+  \centering  
+	\begin{center}
+	\begin{tabular}{ |c| } 
+ 	\hline
+ 		Freq Patterns \\ \hline\hline
+ 		ca  	\\ \hline
+ 		
+\end{tabular}
+\end{center}   
+  \captionof{table}{ \emph{Freq Patterns} }
+\end{minipage}
+\end{figure}
+\begin{figure}
+\centering
+  \includegraphics[width=.12\textwidth, height=1.2cm]{../images/A_COND.jpg}
+  \captionof{figure}{\emph{c-cond Tree}}
 
-\end{document}
+\end{figure}
+%\end{document}
