@@ -4,7 +4,7 @@
 %\usepackage{graphicx}
 %\begin{document}
 \begin{figure}
-\begin{minipage}{0.60\textwidth}
+\begin{minipage}{0.40\textwidth}
   \centering
   
 	\begin{center}
@@ -23,7 +23,7 @@
 \end{center}  
   
   
-  \captionof{table}{\emph{Frequent Items}\\(with false positive)}
+  \captionof{table}{\emph{Frequent Items}}
 \end{minipage}
 \hfill
 \begin{minipage}{0.40\textwidth}
@@ -31,34 +31,33 @@
   \includegraphics[width=\textwidth]{../images/frequent_tree.jpg}
   \captionof{figure}{\emph{Frequent Item Tree} }
 \end{minipage}
+\caption{Frequent Patterns and Pattern Trees}
+\label{figure:frequent_patterns}
 \end{figure}
 \begin{figure}
-\begin{minipage}{.6\textwidth}
+\begin{minipage}{.4\textwidth}
   \centering
   
 	\begin{center}
 	\begin{tabular}{ |c|c| } 
  	\hline
  		No & Items \\ \hline\hline
- 		a  & \emph{a(0.9),c(0.6),d(0.5)}\\ \hline
- 		b & \emph{a(0.9),b(0.4),e(0.1)}\\ \hline
- 		c & \emph{a(0.2),c(0.9),d(0.7)}\\ \hline
- 		d & \emph{b(0.3),c(0.9)}\\ \hline
- 		dc& \emph{a(0.1),b(0.3),c(0.9)} \\ \hline
- 		da & \emph{a(0.9),e(0.3)
+ 		T\textsubscript{1} & \emph{a(0.9),c(0.6),d(0.5)}\\ \hline
+ 		T\textsubscript{2}& \emph{a(0.9),b(0.4),e(0.1)}\\ \hline
+ 		T\textsubscript{3}& \emph{a(0.2),c(0.9),d(0.7)}\\ \hline
+ 		T\textsubscript{4}& \emph{b(0.3),c(0.9)}\\ \hline
+ 		T\textsubscript{5}& \emph{a(0.1),b(0.3),c(0.9)} \\ \hline
+ 		T\textsubscript{6} & \emph{a(0.9),e(0.3)
 }\\ \hline
 \end{tabular}
 \end{center}  
-  
-  
-  \captionof{table}{Transaction Table after removing Infrequent Items}
 \end{minipage}
 \hfill
-\begin{minipage}{0.40\textwidth}
+\begin{minipage}{0.50\textwidth}
   \centering
-  \includegraphics[width=.8\textwidth]{../images/frequent_tree_final.jpg}
-  \captionof{figure}{\emph{Frequent Item Tree} identifying false positives}
+  \includegraphics[width=\textwidth]{../images/frequent_tree_final.jpg}
 \end{minipage}
-
+\caption{Transaction Table and Pattern Trees identifying \emph{False Positives}}
+\label{figure:frequent_patterns_final}
 \end{figure}
 %\end{document}

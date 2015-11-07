@@ -1,41 +1,24 @@
-%\documentclass[a4paper]{article}
-
-%\usepackage[english]{babel}
-%\usepackage[utf8]{inputenc}
-%\usepackage{amsmath}
-%\usepackage{amsfonts}
-%\usepackage{graphicx}
-%\usepackage[colorinlistoftodos]{todonotes}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
-
-%\usepackage{geometry}
-% \geometry{
-% a4paper,
-% total={210mm,297mm},
-% left=20mm,
-% right=20mm,
-% top=20mm,
-% bottom=20mm,
-% }
-
+%\documentclass{article}
+%\usepackage[]{algorithm2e}
 %\begin{document}
-  \begin{algorithm}
-   \caption{\emph{U\textsuperscript{cap}} Assignment}
-    \begin{algorithmic}[1]
-      \Function{Assign\emph{U\textsuperscript{cap}}}{$Batch$ $B$}
-			\For {Transaction $T$  in Batch}
-				\For {$\$i=1$ to size of ( $T$ )}
-					\State $\$Item$ = T[$[i]$]
-					\If{$i=1$}
-						\State $\$Item$[\emph{U\textsuperscript{cap}}] $=$ $Probability(\$Item)$
-					\Else
-						\State $\$Item$[\emph{U\textsuperscript{cap}}] $=$ MAX \{ $Probability(\$T[1])$ to $Probability(\$T[i-1])$ \} $*$ $Probability(\$Item)$
-					\EndIf
-				\EndFor
-			\EndFor
-       \EndFunction
-
-\end{algorithmic}
+\noindent
+ \textbf{\emph{Input :}} \emph{Transaction T}\\
+ \textbf{\emph{Output : }}\emph{Transaction T with U\textsuperscript{cap} assigned} \\
+\begin{algorithm}
+ \textbf{\emph{Procedure : }}\emph{calculateU\textsuperscript{cap}}\\
+ \For{$I=0;I<T.size;I++$}{
+ 	\If{$I==0$}{
+ 		$I.$\emph{I\textsuperscript{cap}}$I.Probability$\\
+ 		$max = I.Probability$
+ 	}
+ 	\Else{
+		$I.$\emph{I\textsuperscript{cap}}$I.Probability*max$\\
+		\If{$I.Probability>max$}{
+			$max = I.Probability$
+		}
+ 	}
+ }
+ \caption{\emph{U\textsuperscript{cap} Assignment Algorithm} }
+ \label{algorithm:cap_assignment}
 \end{algorithm}
 %\end{document}

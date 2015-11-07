@@ -2,6 +2,7 @@
 %\usepackage{caption}
 %\usepackage{graphicx}
 %\begin{document}
+
 \begin{figure}
 \begin{minipage}{0.40\textwidth}
   \centering
@@ -10,10 +11,36 @@
 	\begin{tabular}{ |c|c|c| } 
  	\hline
  		Item&\emph{U\textsuperscript{cap}}&Support\\ \hline\hline
- 		A &  3.00  & 3.00\\ \hline
- 		C &  1.26  & 3.30\\ \hline
- 		D &  1.08  & 1.20\\ \hline
- 		B &  0.69  & 1.00\\ \hline
+ 		a &  3.00  & 3.00	\\ \hline
+ 		c &  1.26  & 3.30	\\ \hline
+ 		d &  1.08  & 1.20	\\ \hline
+ 		e &  0.54  & 0.60	\\ \hline
+ 		b &  0.69  & 1.00	\\ \hline
+\end{tabular}
+\end{center}   
+  \captionof{table}{Header Table }
+\end{minipage}
+\hfill
+\begin{minipage}{0.40\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{../images/sim_06.jpg}
+  \captionof{figure}{\emph{US-tree} for mining.}
+\end{minipage}
+\caption{\emph{US-tree} and its Header Table}
+\label{figure:min_before}
+\end{figure}
+\begin{figure}
+\begin{minipage}{0.40\textwidth}
+  \centering
+  
+	\begin{center}
+	\begin{tabular}{ |c|c|c| } 
+ 	\hline
+ 		Item&\emph{U\textsuperscript{cap}}&Support\\ \hline\hline
+ 		a &  3.00  & 3.00\\ \hline
+ 		c &  1.26  & 3.30\\ \hline
+ 		d &  1.08  & 1.20\\ \hline
+ 		b &  0.69  & 1.00\\ \hline
 \end{tabular}
 \end{center}  
   
@@ -24,38 +51,9 @@
 \begin{minipage}{0.40\textwidth}
   \centering
   \includegraphics[width=\textwidth]{../images/M_TREE.jpg}
-  \captionof{figure}{\emph{US-tree} Before Mining}
+  \captionof{figure}{\emph{US-tree} for Mining}
 \end{minipage}
-
-
-\caption{\emph{US-tree} and its Header Table}
-\end{figure}
-\begin{figure}
-
-\begin{minipage}{0.40\textwidth}
-  \centering
-  
-	\begin{center}
-	\begin{tabular}{ |c|c|c| } 
- 	\hline
- 		Item&\emph{U\textsuperscript{cap}}&Support\\ \hline\hline
- 		A &  3.00  & 3.00	\\ \hline
- 		C &  1.26  & 3.30	\\ \hline
- 		D &  1.08  & 1.20	\\ \hline
- 		E &  0.54  & 0.60	\\ \hline
- 		B &  0.69  & 1.00	\\ \hline
-\end{tabular}
-\end{center}  
-  
-  
-  \captionof{table}{Header Table }
-\end{minipage}
-\hfill
-\begin{minipage}{0.40\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{../images/sim_06.jpg}
-  \captionof{figure}{\emph{US-tree} for mining.}
-\end{minipage}
-\caption{\emph{US-tree(Mining)} and its Header Table}
+\caption{\emph{US-tree (Mining)} and its Header Table}
+\label{figure:min_ready}
 \end{figure}
 %\end{document}

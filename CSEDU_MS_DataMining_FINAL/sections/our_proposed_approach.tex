@@ -14,41 +14,36 @@
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{todonotes}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
+\usepackage[]{algorithm2e}
 
 \begin{document}
-\tableofcontents
-\listoffigures
-\listoftables
-\newpage
 \chapter{Our Proposed Approaches}
-\input{pa_intro.tex}
-\newpage
+\input{pa_intro}
+\section{Uncertain Stream Data Properties}
+In this chapter we will talk about data properties. our data has two special properties. (1)Stream and (2)Uncertainty. For these properties it becomes very much hard to get valuable and interesting information from data. So first we discuss about the data set properties.
 
-\section{Analysis Uncertain Stream Data Properties}
-Hello World
-\input{../example/table_uncertain_transaction.tex}
+\input{../example/table_uncertain_transaction}
+
+
 \subsection{Stream Property}
 \subsection{Uncertainty Property}
-For expected support calculation in an uncertain database we get the following equation\\
-\input{../example/eqn_min_sup.tex}
-\newpage
+%For expected support calculation in an uncertain database we get the following equation
+\input{../example/eqn_min_sup}
 \section{Preliminaries}
 \paragraph*
 This is Definitions and Preliminaries.
-\input{../example/table_uncertain_transaction_batch.tex}
+\input{../example/table_uncertain_transaction_batch}
 \newpage
 \section{Mining Frequent Patterns from Uncertain Databases}
-Our proposed algorithm is divided into four parts. (1) Giving each item in a transaction a prefix value is called \emph{U\textsuperscript{cap}}. (2) insert transaction into \emph {US-tree}. (3) sliding the \emph {US-tree} (4) mining the \emph {US-tree} (\emph{USFP-growth}) and (5) Eliminating false positive (not frequent but exists in frequent item set) . For simulating our approach we consider Table~\ref{tab:ex_u} as uncertain stream data. For this simulation we consider window size as 2 and batch size 3. That means 3 transactions creates a batch and 2 batches create a window. After completing window construction (inserting batch 1 and 2 the tree is completed. When new transactions comes we slide the window. That means we remove oldest batch batch 1 and put batch 2 as the old batch. Then insert new batch in the tree as batch 3. So for window size 2 the tree always contains 2 batches. Thus the tree always holds the newest information. In next subsections we will elaborately explain our approach of every steps.
-\subsection{Assigning Prefix Value}
+Our proposed algorithm is divided into five parts. (1) Grouping transactions into batches and window and giving each item in a transaction a prefix value is called \emph{U\textsuperscript{cap}}. (2) insert transaction into \emph {US-tree}. (3) sliding the \emph {US-tree} (4) mining the \emph {US-tree} with \emph{USFP-growth} algorithm and (5) Eliminating false positive (not frequent but exists in frequent item set) . For simulating our approach we consider Table~\ref{table:uncertain_stream_transaction} as uncertain stream transaction data. For this simulation we consider window size as 2 and batch size 3. That means 3 transactions creates a batch and 2 batches create a window. After completing window construction (inserting batch 1 and 2) the \emph {US-tree} will be full. When new batch comes we slide the window. That means we remove oldest batch batch-1 and put batch-2 as the old batch. Then insert new batch in the tree as batch-3. So for window size 2 the tree always contains at most 2 batches. Thus the tree always holds the latest information. In next subsections we will elaborately explain our approach of every steps.
+\subsection{Preparation}
 \input{../example/table_prefix}
 \input{pa_preparation}
-
 \subsection{US-tree Construction}
 \input{pa_tree}
-\subsection{Mining US-tree : FPUS-growth}
+\subsection{Mining US-tree FPUS-growth}
 \input{pa_mining}
+\newpage
 \subsection{False positive reduction}
 \input{pa_elimination}
 \subsection{Algorithm}
@@ -56,5 +51,4 @@ Our proposed algorithm is divided into four parts. (1) Giving each item in a tra
 \newpage
 \section{Summary}
 \input{pa_summary}
-
 \end{document}

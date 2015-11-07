@@ -1,53 +1,58 @@
-%\documentclass[a4paper]{article}
-%
-%\usepackage[english]{babel}
-%\usepackage[utf8]{inputenc}
-%\usepackage{amsmath}
-%\usepackage{amsfonts}
-%\usepackage{graphicx}
-%\usepackage[colorinlistoftodos]{todonotes}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
-%
-%
+%\documentclass{article}
+%\usepackage[]{algorithm2e}
 %\begin{document}
-%\listoffigures
-\begin{enumerate}
-
- \item Some text goes here . . .
-  \begin{algorithm}
-   \caption{Merge Sort}
-    \begin{algorithmic}
-      \Procedure{Merge}{$A,p,q,r$}\Comment{Where A - array, p - left, q - middle, r - right}
-
-        \State ${n_1} = q - p + 1$
-        \State ${n_2} = r - q$
-        \State Let $L[1 \ldots {n_1} + 1]$ and $R[1 \ldots {n_2} + 1]$ be new arrays
-        \For{$i = 1$ to ${n_1}$}
-            \State $L[i] = A[p + i - 1]$
-        \EndFor
-        \For{$j = 1$ to ${n_2}$}
-            \State $R[i] = A[q + j]$
-        \EndFor
-        \State $L[{n_1} + 1] =  \infty $
-        \State $R[{n_2} + 1] =  \infty $
-        \State $i = 1$
-        \State $j = 1$
-        \For{$k = p$ to $r$}
-            \If {$L[i] < R[j]$}
-                \State $A[k] = L[i]$
-                \State $i = i + 1$
-            \ElsIf {$L[i] > R[j]$}
-                \State $A[k] = R[j]$
-                \State $j = j + 1$
-            \Else
-                \State $A[k] = - \infty$ \Comment{We mark the duplicates with the largest negative integer}
-                \State $j = j + 1$
-            \EndIf
-        \EndFor
-       \EndProcedure
-
-\end{algorithmic}
+\noindent
+\textbf{\emph{Input :}} \emph{Window Size w, Batch Size b, Uncertain Transactions UDB}\\
+ \textbf{\emph{Output : }}\emph{Root of Constructed US-tree} \\
+\begin{algorithm}[H]
+ 
+ \textbf{\emph{Procedure : }}\emph{constructUS-tree}\\
+ Create Root node \{\} \\
+ \For{$i\leftarrow w$}{			 
+	\For{$j\leftarrow b$}{
+		$T \leftarrow read next Transaction$ \\
+		$T \leftarrow calculate $\emph{U\textsuperscript{cap}}\\
+		$parent \leftarrow root$  \\
+		\For{$I \leftarrow T.item$}{
+			\If{$I.id$ \textbf{in} $parent.childes$}{
+				$node \leftarrow parent.child$ \\
+				$node[w].prefix=node[w].prefix+I.$U\textsuperscript{cap}
+				
+			}\Else{
+				$node\leftarrow$ \emph{new node()} \\
+				$node[w].prefix=I.$U\textsuperscript{cap}\\
+				$parent.addChild(node)$\\
+				$parent \leftarrow node$
+			}
+			\emph{Update Header Table}\\
+			
+		}
+	 }
+ }
+ \emph{mine USFP-growth() }\\
+ \emph{slide tree}\\
+ $counter = 0$ \\
+ \While{$T \leftarrow has more Transaction$}{
+ 	\If{$counter==b$}{
+ 		\emph{mine USFP-growth()}\\
+ 		\emph{slide tree(root)}\\
+ 		$counter=0$
+ 	}
+ 	\If{$I.id$ \textbf{in} $parent.childes$}{
+				$node \leftarrow parent.child$ \\
+				$node[w].prefix=node[w].prefix+I.$U\textsuperscript{cap}
+				
+	}\Else{
+		$node\leftarrow$ \emph{new node()} \\
+		$node[w].prefix=I.$U\textsuperscript{cap}\\
+		$parent.addChild(node)$\\
+		$parent \leftarrow node$
+	}
+	\emph{Update Header Table}\\
+ 	
+ }
+ 
+ \caption{\emph{US-tree} construction Algorithm}
+ \label{algorithm:tree_construction}
 \end{algorithm}
-\end{enumerate}
 %\end{document}
