@@ -1,0 +1,59 @@
+%mark = star, diamond, square, otimes
+\documentclass{article}
+\usepackage{pgfplots}
+\usepackage[justification=centering]{caption}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{figure}
+\centering
+
+\begin{tikzpicture}
+\begin{axis}[
+ width=11cm,
+   height=8cm,
+    xlabel={Minimum Support (\%) },
+    ylabel={Running Time (ms)},
+    xmin=12, xmax=19,
+    ymin=0, ymax=4000,
+    xtick={12,13,14,15,16,17,18,19},
+    ytick={500,1000,1500,2000,2500,3000},
+    legend pos=north east,
+    ymajorgrids=true,
+    grid style={line width=.2pt,draw=gray!50},
+]
+ 
+\addplot[
+    solid, every mark/.append style={solid, fill=gray}, mark=square
+    ]
+    coordinates {
+	(12,2771)
+	(13,2110)
+	(14,2015)
+	(15,1873)
+	(16,1848)
+	(17,1763)
+	(18,1732)
+	(19,1634)
+	};
+    \addlegendentry{SUF-growth}
+\addplot[
+    solid, every mark/.append style={solid, fill=black}, mark=*
+    ]
+    coordinates {
+	(12,351)
+	(13,182)
+	(14,189)
+	(15,136)
+	(16,192)
+	(17,112)
+	(18,128)
+	(19,117)
+};
+    \addlegendentry{USFP-growth}
+ 
+\end{axis}
+\end{tikzpicture}
+\caption{Total Tree Construction Time vs Minimum Suppport (\%) \\(Window Size = 4, Frame Size = 650) for mushroom database}
+\label{result:mushroom_total}
+\end{figure}
+\end{document}
