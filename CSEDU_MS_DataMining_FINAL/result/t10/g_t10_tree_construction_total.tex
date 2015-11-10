@@ -1,0 +1,67 @@
+%%mark = star, diamond, square, otimes
+%\documentclass{article}
+%\usepackage{pgfplots}
+%\usepackage[justification=centering]{caption}
+%\pgfplotsset{compat=newest}
+%\begin{document}
+\begin{figure}[!h]
+\centering
+
+\begin{tikzpicture}
+\begin{axis}[
+ width=12cm,
+   height=7cm,
+    xlabel={Minimum Support (\%) },
+    ylabel={Running Time (s)},
+    xmin=4.5, xmax=9.5,
+    ymin=0, ymax=700,
+    xtick={4.55,5.5,6,6.5,7,7.5,8,8.5,9,9.5},
+    ytick={100,200,300,400,500,600},
+    legend pos=north east,
+    ymajorgrids=true,
+    grid style={line width=.2pt,draw=gray!50},
+]
+ 
+\addplot[
+    solid, every mark/.append style={solid, fill=gray}, mark=square
+    ]
+    coordinates {
+			(4.5,520.723)
+			(5  ,511.365)
+			(5.5,507.854)
+			(6  ,510.12 )
+			(6.5,504.767)
+			(7  ,542.742)
+			(7.5,557.633)
+			(8  ,545.039)
+			(8.5,545.444)
+			(9  ,559.335)
+			(9.5,542.996)
+
+	};
+    \addlegendentry{SUF-growth}
+\addplot[
+    solid, every mark/.append style={solid, fill=black}, mark=*
+    ]
+    coordinates {
+		(4.5,21.814)
+		(5  ,11.035)
+		(5.5,10.601)
+		(6  ,10.723)
+		(6.5,9.646 )
+		(7  ,9.177 )
+		(7.5,9.427 )
+		(8  ,9.092 )
+		(8.5,8.8   )
+		(9  ,8.95  )
+		(9.5,8.883 )
+
+};
+    \addlegendentry{USFP-growth}
+ 
+\end{axis}
+\end{tikzpicture}
+\caption{Total Tree Construction Time vs Minimum Suppport (\%) \\(Window Size = 5, Frame Size = 7000) for T40I10D100K database}
+\label{result:t10_tree_total}
+\end{figure}
+%\end{document}
