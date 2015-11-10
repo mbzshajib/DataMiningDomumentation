@@ -18,6 +18,11 @@
 **/*.aux
 **/*.out
 **/*.toc
+**/*.bcf
+**/*.blg
+**/*.lot
+**/*.bbl
+**/*.xml
 .idea
 
 
