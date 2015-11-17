@@ -1,4 +1,4 @@
-%%mark = star, diamond, square, otimes
+%%%mark = star, diamond, square, otimes
 %\documentclass{article}
 %\usepackage{pgfplots}
 %\usepackage[justification=centering]{caption}
@@ -12,11 +12,11 @@
  width=12cm,
    height=7cm,
     xlabel={Frame Size },
-    ylabel={Node Count ($10^6$)},
+    ylabel={Node Count ($10^3$)},
     xmin=7000, xmax=9000,
-    ymin=0, ymax=16,
+    ymin=0, ymax=2500,
     xtick={7000,7500,8000,8500,9000},
-    ytick={3,6,9,12,15},
+    ytick={500,1000,1500,2000,2500},
     legend pos=north east,
     ymajorgrids=true,
     grid style={line width=.2pt,draw=gray!50},
@@ -26,13 +26,12 @@
     solid, every mark/.append style={solid, fill=gray}, mark=square
     ]
     coordinates {
-		(7000,13.695556)
-		(7500,13.200902)
-		(8000,12.512976)
-		(8500,11.627701)
-		(9000,12.308889)
-		(9500,11.134408)
-
+			(7000,1369.555 )
+			(7500,1466.766 )
+			(8000,1564.122 )
+			(8500,1661.100 )
+			(9000,1758.412 )
+			(9500,1855.734 )
 
 	};
     \addlegendentry{SUF-growth}
@@ -40,12 +39,12 @@
     solid, every mark/.append style={solid, fill=black}, mark=*
     ]
     coordinates {
-			(7000,12.995104)
-			(7500,12.522495)
-			(8000,11.867025)
-			(8500,11.024889)
-			(9000,11.668386)
-			(9500,10.552641)
+					(7000,1299.510)
+		(7500,1391.388)
+		(8000,1483.378)
+		(8500,1574.984)
+		(9000,1666.912)
+		(9500,1758.773)
 
 };
     \addlegendentry{USFP-growth}
