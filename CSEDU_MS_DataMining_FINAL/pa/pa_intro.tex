@@ -1,7 +1,0 @@
-%\documentclass{article}
-%\begin{document}
-%
-\noindent
-In this section we will discuss about our proposed approach for mining frequent pattern over large uncertain stream data. Stream Data has a special property that it comes and flows away. For this reason we will always lose data after data stream has flown away. To resolve this we will proposed a window based approach, where we will keep the most recent information in a tree structure as the most recent data is most valuable. Later we will show how the window will slide, remove old data and insert new transactions in the window. As, for uncertain data stream each same item in different transaction has different existential probability, it becomes very hard to merge (share) these nodes in the tree. This uncertainty property of item makes the tree huge. We have proposed a new \emph{U\textsuperscript{cap}} value for each item that helps to share a single node when constructing the tree which we named as \emph{US-tree}. We will show that our proposed tree \emph{US-tree} will be very compact and very efficient for later mining. Later will describe an approach for mining the \emph {US-tree} named \emph{USFP-growth} which is \emph{FP-growth} like approach. Later we will propose a method for filtering false positive from found most probable frequent patterns.
-%\input{../example/table_uncertain_transaction.tex}
-%\end{document}
