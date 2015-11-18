@@ -6,12 +6,32 @@
 \chapter{Experimental Result}
 In this chapter we have shown our experimental results achieved by our proposed approach. Based on several performance metric we have tried to show our algorithms' efficiency and performance. We have taken different scale/parameter to evaluate our algorithm
 \section{Experimental Settings}
-\input{result/result_settings}
+We have performed number of simulations in our experiment on both synthetic database and real world database. The data are taken from data set repository [\ref{bib:dataset}]. Our experiment shows that \emph{US-tree} ( Uncertain Stream tree )is very much compact. This tree construction technique can make the items to share one node. This compactness of \emph{US-tree} surprisingly helps the mining, \emph{USFP-growth} ( Uncertain Stream Frequent Pattern growth ) process to gain a lot in run-time and memory. More over our proposed pattern tree can be used to find max patterns and close patterns. Performance tests from our experiment shows that \emph{US-tree} tree construction technique and \emph{USFP-growth} mining algorithm can run on any uncertain stream database with any support threshold, window size and batch size. Our experimental result shows that these techniques are much more faster and scalable frequent pattern mining technique. As we have proposed a new approach for finding frequent patterns over uncertain data we have compared performance with itself for comparing correctness of our approach. Then we have compared with all well known existing approaches for finding frequent item sets over uncertain database. \emph{SUF-growth} is one of them. We have tried to compare in all aspects to prove our approach's correctness, run-time efficiency, memory efficiency and and scalability.
+\input{table/table_configuration}
+All program for the simulating experimental result are written \emph{Java} programming language that run on \emph{Java Runtiime Environment (JRE) - 1.7.0.79}. All program was run on a computer having \emph{3.4GHz Intel(R) Core(TM) i7} processor and \emph{8GB RAM} with \emph{Windows-7, 64-bit, service pack-1} operating system installed in it (Table-[\ref{table:experiment_configuration}]). Results shown in this chapter are based on average of multiple run for every case. \emph{US-tree} was constructed with chronological order of database items. All the running time includes \emph{CPU}, \emph{I/O}.\\
+\input{result/g_normal_distribution}
+we got the synthetic and real life datasets from the frequent itemset mining repository [\ref{bib:dataset}], those were collected for certain databases. Then we have used our own probabilistic tool and technique to generate existential probability of each items of the each transaction of database. Real life data set actually follows gaussian distribution that is normal distribution [\ref{result:normal_distribution}]. It actually says that in real world extreme cases are minimum and average case are maximum. From the figure [\ref{result:normal_distribution}] we can see that in the middle the pick value is highest so we can say count item probability at \emph{.5} is maximum. So we used this technique to generate and introduce existential probability to each items in a transaction. We have used \emph{Java psudo random} generate existential probability for each item of all the transaction of database. By assigning these probabiity value to each items we have generate uncertain database for both real life database and synthetic database found from dataset repository [\ref{bib:dataset}]. However one can give existential probability by any distribution according to need.
 \section{Performance Metrics}
-\input{result/result_matrices}
+We have consider several metrics as parameters for evaluating our proposed algorithm. We have set several property for this evaluation from experimental result. As we have worked on data set that comes like stream so we have set parameters for both the frequent item set mining from total data set and per window. The parameters and properties are given below:
+
+\begin{itemize}
+\item Tree construction time per window and total database vs minimum support.
+\item Mining time per window and total database vs minimum support.
+\item Total time to complete per window and total database vs minimum support.
+\item Total tree node in tree per window.
+\item Total memory needed by mining process
+\end{itemize}
 \section{Experimental Environment}
-\input{result/result_environment}
-\nopagebreak[2]
+For our experimental evaluation we used both real life database and synthetic database from database repository [\ref{bib:dataset}]. Table [\ref{table:dataset}] shows the data base type and properties.
+\input{table/table_dataset}
+\subsection{Real Life Data Set}
+For real life data sets we have used mushroom [\ref{bib:dataset}], chess [\ref{bib:dataset}] and pumsb star [\ref{bib:dataset}]. Mushroom, chess and pumsb star are dense datasets. Mushroom has 8124 transactions with 120 distinct items, chess has 3196 transactions with 75 distinct items and pumsb star has 49046 transactions with 2088 distinct items. For probability assignment to each items we used normal distribution for getting existential probability.
+\subsection{Synthetic Data Set}
+For synthetic data sets we have used T10I4D100K [\ref{bib:dataset}]. It is an IBM generated transactional data set widely used for frequent pattern mining. It is a sparse data set with 100000 transactions and 869 distinct items. For probability assignment to each items we used normal distribution for getting existential probability.
+\input{result/mushroom/g_dataset_mushroom}
+\input{result/chess/g_dataset_chess}
+\input{result/pumsb_star/g_dataset_pumsb_star}
+\input{result/t10/g_dataset_t10}
 \section{Comparison with Existing Approaches}
 \input{result/result_comparison}
 %
