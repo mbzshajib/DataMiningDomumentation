@@ -12,11 +12,17 @@
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
 \usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
 \hypersetup{urlcolor=black, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
-\usepackage{algorithm} % for writing pseducode
-\usepackage{algorithm,algpseudocode}
 \usepackage{amsthm}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{fixltx2e}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{todonotes}
+\usepackage[]{algorithm2e}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
 
 %% ----------------------------------------------------------------
 \begin{document}
@@ -178,15 +184,15 @@ have always been a source of great inspiration for me.
 % Include the chapters of the thesis, as separate files
 % Just uncomment the lines as you write the chapters
 
-\input{./Chapters/Chapter1} % Introduction
+\input{./Chapters/introduction} % Introduction
 
-\input{./Chapters/Chapter2} % Previous Work
+\input{./Chapters/related_work} % Previous Work
 
-\input{./Chapters/Chapter3} % Proposed Approach
+\input{./Chapters/our_proposed_approach} % Proposed Approach
 
-\input{./Chapters/Chapter4} % Performance Evaluation
+\input{./Chapters/result} % Performance Evaluation
 
-\input{./Chapters/Chapter5} % Conclusion
+\input{./Chapters/conclusion} % Conclusion
 
 %% ----------------------------------------------------------------
 % Now begin the Appendices, including them as separate files
