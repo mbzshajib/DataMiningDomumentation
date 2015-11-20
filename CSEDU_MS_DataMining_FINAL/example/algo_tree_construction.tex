@@ -1,58 +1,55 @@
-%\documentclass{article}
-%\usepackage[]{algorithm2e}
-%\begin{document}
-\noindent
-\textbf{\emph{Input :}} \emph{Window Size w, Batch Size b, Uncertain Transactions UDB}\\
- \textbf{\emph{Output : }}\emph{Root of Constructed US-tree} \\
-\begin{algorithm}[H]
- 
- \textbf{\emph{Procedure : }}\emph{constructUS-tree}\\
- Create Root node \{\} \\
- \For{$i\leftarrow w$}{			 
-	\For{$j\leftarrow b$}{
-		$T \leftarrow read next Transaction$ \\
-		$T \leftarrow calculate $\emph{U\textsuperscript{cap}}\\
-		$parent \leftarrow root$  \\
-		\For{$I \leftarrow T.item$}{
-			\If{$I.id$ \textbf{in} $parent.childes$}{
-				$node \leftarrow parent.child$ \\
-				$node[w].prefix=node[w].prefix+I.$U\textsuperscript{cap}
-				
-			}\Else{
-				$node\leftarrow$ \emph{new node()} \\
-				$node[w].prefix=I.$U\textsuperscript{cap}\\
-				$parent.addChild(node)$\\
-				$parent \leftarrow node$
-			}
-			\emph{Update Header Table}\\
-			
-		}
-	 }
- }
- \emph{mine USFP-growth() }\\
- \emph{slide tree}\\
- $counter = 0$ \\
- \While{$T \leftarrow has more Transaction$}{
- 	\If{$counter==b$}{
- 		\emph{mine USFP-growth()}\\
- 		\emph{slide tree(root)}\\
- 		$counter=0$
- 	}
- 	\If{$I.id$ \textbf{in} $parent.childes$}{
-				$node \leftarrow parent.child$ \\
-				$node[w].prefix=node[w].prefix+I.$U\textsuperscript{cap}
-				
-	}\Else{
-		$node\leftarrow$ \emph{new node()} \\
-		$node[w].prefix=I.$U\textsuperscript{cap}\\
-		$parent.addChild(node)$\\
-		$parent \leftarrow node$
-	}
-	\emph{Update Header Table}\\
- 	
- }
- 
- \caption{\emph{US-tree} construction Algorithm}
- \label{algorithm:tree_construction}
-\end{algorithm}
+%%\documentclass{article}
+%%\usepackage[]{algorithm2e}
+%%\begin{document}
+%\textbf{\emph{Input :}} \emph{Window Size w, Batch Size b, Uncertain Transactions UDB}\\
+% \textbf{\emph{Output : }}\emph{Root of Constructed US-tree} \\
+%\begin{algorithm}
+% 
+% \textbf{\emph{Procedure : }}\emph{constructUS-tree}\\
+% Create Root node \{\} \\
+% \For{$i\leftarrow w$}{			 
+%	\For{$j\leftarrow b$}{
+%		$T \leftarrow read next Transaction$ \\
+%		$T \leftarrow calculate $\emph{U\textsuperscript{cap}}\\
+%		$parent \leftarrow root$  \\
+%		\For{$I \leftarrow T.item$}{
+%			\If{$I.id$ \textbf{in} $parent.childes$}{
+%				$node \leftarrow parent.child$ \\
+%				$node[w].prefix=node[w].prefix+I.$U\textsuperscript{cap}
+%				
+%			}\Else{
+%				$node\leftarrow$ \emph{new node()} \\
+%				$node[w].prefix=I.$U\textsuperscript{cap}\\
+%				$parent.addChild(node)$\\
+%				$parent \leftarrow node$
+%			}
+%			\emph{Update Header Table}\\
+%			
+%		}
+%	 }
+% }
+% \emph{mine USFP-growth() }\\
+% \emph{slide tree}\\
+% $counter = 0$ \\
+% \While{$T \leftarrow has more Transaction$}{
+% 	\If{$counter==b$}{
+% 		\emph{mine USFP-growth()}\\
+% 		\emph{slide tree(root)}\\
+% 		$counter=0$
+% 	}
+% 	\If{$I.id$ \textbf{in} $parent.childes$}{
+%				$node \leftarrow parent.child$ \\
+%				$node[w].prefix=node[w].prefix+I.$U\textsuperscript{cap}
+%				
+%	}\Else{
+%		$node\leftarrow$ \emph{new node()} \\
+%		$node[w].prefix=I.$U\textsuperscript{cap}\\
+%		$parent.addChild(node)$\\
+%		$parent \leftarrow node$
+%	}
+%	\emph{Update Header Table}\\
+% }
+% \caption{\emph{US-tree} construction Algorithm}
+% \label{algorithm:tree_construction}
+%\end{algorithm}
 %\end{document}
