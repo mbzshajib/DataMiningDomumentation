@@ -54,7 +54,7 @@ For our experimental evaluation we used both real life database and synthetic da
 
 
 \subsection{Real Life Data Set}
-For real life data sets we have used mushroom ~\cite{dataset}, chess ~\cite{dataset} and pumsb star ~\cite{dataset}. Mushroom, chess and pumsb star are dense datasets. Mushroom has 8124 transactions with 120 distinct items, chess has 3196 transactions with 75 distinct items and pumsb star has 49046 transactions with 2088 distinct items. For probability assignment to each items we used normal distribution for getting existential probability. For giving existential probabiity to each item of each transaction in database we have followed the natural distibution described earlier. Figure \ref{result:g_dataset_mushroom}, figure \ref{result:g_dataset_chess}, figure \ref{result:g_dataset_pumsb_star} shows the probability distribution for corresponding mushroom, chess and pumsb star.
+For real life data sets we have used mushroom ~\cite{dataset} and chess ~\cite{dataset}. Mushroom, chess and pumsb star are dense datasets. Mushroom has 8124 transactions with 120 distinct items and chess has 3196 transactions with 75 distinct items. For probability assignment to each items we used normal distribution for getting existential probability. For giving existential probabiity to each item of each transaction in database we have followed the natural distibution described earlier. Figure \ref{result:g_dataset_mushroom}, figure \ref{result:g_dataset_chess} shows the probability distribution for corresponding mushroom and chess.
 		\begin{figure}[h]
 		\centering
 			\input{result/mushroom/g_dataset_mushroom}
@@ -67,13 +67,6 @@ For real life data sets we have used mushroom ~\cite{dataset}, chess ~\cite{data
 			\input{result/chess/g_dataset_chess}
 		\caption{Probability Distribution for Chess ~\cite{dataset} data set}
 		\label{result:g_dataset_chess}
-		\end{figure}
-		
-		\begin{figure}[h]
-		\centering
-			\input{result/pumsb_star/g_dataset_pumsb_star}
-		\caption{Probability Distribution for Pumsb Star ~\cite{dataset} data set}
-		\label{result:g_dataset_pumsb_star}
 		\end{figure}
 
 \subsection{Synthetic Data Set}
