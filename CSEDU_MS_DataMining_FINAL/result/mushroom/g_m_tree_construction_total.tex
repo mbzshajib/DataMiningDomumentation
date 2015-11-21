@@ -3,14 +3,12 @@
 %\usepackage{pgfplots}
 %\usepackage[justification=centering]{caption}
 %\pgfplotsset{compat=newest}
-%\begin{document}
-\begin{figure}
-\centering
-
+%\begin{document} 
 \begin{tikzpicture}
 \begin{axis}[
- width=12cm,
-   height=7cm,
+	title={\parbox{\linewidth}{\centering Total Tree Construction Time vs Minimum Suppport (\%) for Mushroom ~\cite{dataset}, Window Size = 4, Frame Size = 650}},
+	width=12cm,
+	height=7cm,
     xlabel={Minimum Support (\%) },
     ylabel={Running Time (ms)},
     xmin=12, xmax=19,
@@ -53,7 +51,4 @@
  
 \end{axis}
 \end{tikzpicture}
-\caption{Total Tree Construction Time vs Minimum Suppport (\%) (Window Size = 4, Frame Size = 650) for mushroom database}
-\label{result:mushroom_tree_total}
-\end{figure}
 %\end{document}

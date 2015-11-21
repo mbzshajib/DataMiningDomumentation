@@ -2,15 +2,13 @@
 %\documentclass{article}
 %\usepackage{pgfplots}
 %\usepackage[justification=centering]{caption}
-%\pgfplotsset{compat=newest}
+%\pgfplotsset{compat=newest} 	title={\parbox{\linewidth}{\centering Total Tree Construction Time vs Minimum Suppport (\%) for T40I10D100K ~\cite{dataset}, Window Size = 5, Frame Size = 7000}},
 %\begin{document}
-\begin{figure}
-\centering
-
 \begin{tikzpicture}
-\begin{axis}[
- width=12cm,
-   height=7cm,
+	\begin{axis}[
+	title={\parbox{\linewidth}{\centering Total Tree Construction Time vs Minimum Suppport (\%) for T40I10D100K ~\cite{dataset}, Window Size = 5, Frame Size = 7000}},
+	width=12cm,
+	height=7cm,
     xlabel={Minimum Support (\%) },
     ylabel={Running Time (s)},
     xmin=4.5, xmax=9.5,
@@ -61,7 +59,4 @@
  
 \end{axis}
 \end{tikzpicture}
-\caption{Total Tree Construction Time vs Minimum Suppport (\%) (Window Size = 5, Frame Size = 7000) for T40I10D100K database}
-\label{result:t10_tree_total}
-\end{figure}
 %\end{document}
