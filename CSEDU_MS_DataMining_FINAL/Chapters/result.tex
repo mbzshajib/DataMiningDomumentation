@@ -11,7 +11,7 @@ In this chapter we have shown our experimental results achieved by our proposed 
 \section{Experimental Settings}
 We have performed number of simulations in our experiment on both synthetic database and real world database. The data are taken from data set repository ~\cite{dataset}. Our experiment shows that \emph{US-tree} ( Uncertain Stream tree )is very much compact. This tree construction technique can make the items to share one node. This compactness of \emph{US-tree} surprisingly helps the mining, \emph{USFP-growth} ( Uncertain Stream Frequent Pattern growth ) process to gain a lot in run-time and memory. More over our proposed pattern tree can be used to find max patterns and close patterns. Performance tests from our experiment shows that \emph{US-tree} tree construction technique and \emph{USFP-growth} mining algorithm can run on any uncertain stream database with any support threshold, window size and batch size. Our experimental result shows that these techniques are much more faster and scalable frequent pattern mining technique. As we have proposed a new approach for finding frequent patterns over uncertain data we have compared performance with itself for comparing correctness of our approach. Then we have compared with all well known existing approaches for finding frequent item sets over uncertain database. \emph{SUF-growth} is one of them. We have tried to compare in all aspects to prove our approach's correctness, run-time efficiency and memory efficiency.
 \input{table/table_configuration}
-All program for the simulating experimental result are written \emph{Java} programming language that run on \emph{Java Run time Environment (JRE) - 1.7.0.79}. All program was run on a computer having \emph{3.4 GHz Intel(R) Core(TM) i-7} processor and \emph{8 GB RAM} with \emph{Windows-7, 64-bit, service pack-1} operating system installed in it (Table-[\ref{table:experiment_configuration}]). Results shown in this chapter are based on average of multiple run for every case. \emph{US-tree} was constructed with chronological order of database items. All the running time includes \emph{CPU}, \emph{I/O}.\\
+All program for the simulating experimental result are written \emph{Java} programming language that run on \emph{Java Run time Environment (JRE) - 1.7.0.79}. All program was run on a computer having \emph{3.4 GHz Intel(R) Core(TM) i-7} processor and \emph{8 GB RAM} with \emph{Windows-7, 64-bit, service pack-1} operating system installed in it (Table-[\ref{table:experiment_configuration}]). For management of the experimental project Gradle was used as build tool. Results shown in this chapter are based on average of multiple run for every case. \emph{US-tree} was constructed with chronological order of database items. All the running time includes \emph{CPU}, \emph{I/O}.\\
 \input{result/g_normal_distribution}
 we got the synthetic and real life datasets from the frequent itemset mining repository ~\cite{dataset}, those were collected for certain databases. Then we have used our own probabilistic tool and technique to generate existential probability of each items of the each transaction of database. Real life data set actually follows Gaussian distribution that is normal distribution [\ref{result:normal_distribution}]. It actually says that in real world extreme cases are minimum and average case are maximum. From the figure [\ref{result:normal_distribution}] we can see that in the middle the pick value is highest so we can say count item probability at \emph{.5} is maximum. So we used this technique to generate and introduce existential probability to each items in a transaction. We have used \emph{Java pseudo random} generate existential probability for each item of all the transaction of database. By assigning these probability value to each items we have generate uncertain database for both real life database and synthetic database found from dataset repository ~\cite{dataset}. However one can give existential probability by any distribution according to need.
 
@@ -58,14 +58,14 @@ For real life data sets we have used mushroom ~\cite{dataset} and chess ~\cite{d
 		\begin{figure}[h]
 		\centering
 			\input{result/mushroom/g_dataset_mushroom}
-		\caption{Probability Distribution for Mushroom ~\cite{dataset} data set}
+		\caption{Probability Distribution for Mushroom ~\cite{dataset} Dataset}
 		\label{result:g_dataset_mushroom}
 		\end{figure}
 		
 		\begin{figure}[h]
 		\centering
 			\input{result/chess/g_dataset_chess}
-		\caption{Probability Distribution for Chess ~\cite{dataset} data set}
+		\caption{Probability Distribution for Chess ~\cite{dataset} Dataset}
 		\label{result:g_dataset_chess}
 		\end{figure}
 
@@ -74,7 +74,7 @@ For synthetic data sets we have used T10I4D100K ~\cite{dataset}. It is an IBM ge
 		\begin{figure}[h]
 		\centering
 			\input{result/t10/g_dataset_t10}
-		\caption{Probability Distribution for T40I10D100K ~\cite{dataset} data set}
+		\caption{Probability Distribution for T40I10D100K ~\cite{dataset} Dataset}
 		\label{result:g_dataset_t10}
 		\end{figure}
 		
