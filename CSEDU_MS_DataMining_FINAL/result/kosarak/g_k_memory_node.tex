@@ -6,15 +6,15 @@
 %\begin{document}
 \begin{tikzpicture}
 \begin{axis}[
-	title={\parbox{\linewidth}{\centering Avg Tree Node per Window vs Batch Size for Mushroom ~\cite{dataset}, Window Size = 2}},
+	title={\parbox{\linewidth}{\centering Avg Tree Node per Window vs Total Transaction for Kosarak Dataset}},
 	width=12cm,
 	height=7cm,
-    xlabel={Batch Size },
+    xlabel={Size of Database (total transaction) in thousand},
     ylabel={Node Count ($10^3$)},
-    xmin=1000, xmax=7000,
-    ymin=0, ymax=200,
-    xtick={1000,2000,3000,4000,5000,6000,7000},
-    ytick={50,100,150,200},
+    xmin=120, xmax=300,
+    ymin=500, ymax=4000,
+    xtick={120,160,180,200,240,300},
+    ytick={1000,1500,2000,2500,3000,3500},
     legend pos=north east,
     ymajorgrids=true,
     grid style={line width=.2pt,draw=gray!50},
@@ -24,15 +24,12 @@
     solid, every mark/.append style={solid, fill=gray}, mark=square
     ]
     coordinates {
-			(1000,22.597)
-			(2000,44.862)
-			(3000,67.033)
-			(4000,89.175)
-			(5000,111.313)
-			(6000,133.377)
-			(7000,155.435)
-
-
+			(120,	895.299)
+			(160,	1337.507)
+			(180,	1558.611)
+			(200,	1779.715)
+			(240,	2221.923)
+			(300,	2885.235)
 
 	};
     \addlegendentry{SUF-growth}
@@ -40,13 +37,12 @@
     solid, every mark/.append style={solid, fill=black}, mark=*
     ]
     coordinates {
-			(1000,6.444)
-			(2000,10.187)
-			(3000,14.568)
-			(4000,18.362)
-			(5000,22.390)
-			(6000,25.416)
-			(7000,30.727)
+			(120,	711.772)
+			(160,	940.241)
+			(180,	1056.093)
+			(200,	1162.692)
+			(240,	1394.691)
+			(300,	1728.543)
 
 
 };

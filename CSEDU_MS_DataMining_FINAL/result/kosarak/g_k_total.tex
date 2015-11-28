@@ -6,15 +6,15 @@
 %\begin{document}
 \begin{tikzpicture}
 \begin{axis}[
-	title={\parbox{\linewidth}{\centering Total Time (Tree Construction + Mining + False Positive Reduction) vs Minimum Suppport (\%) for Mushroom ~\cite{dataset}, Window Size = 4, Frame Size = 650}},
+	title={\parbox{\linewidth}{\centering Total Time (Tree Construction + Mining + False Positive Reduction) vs Minimum Suppport (\%) for Kosarak , Window Size = 2, Frame Size = 60000}},
 	width=12cm,
 	height=7cm,
     xlabel={Minimum Support (\%) },
-    ylabel={Running Time (ms)},
-    xmin=12, xmax=19,
-    ymin=0, ymax=4500,
-    xtick={12,13,14,15,16,17,18,19},
-    ytick={500,1000,1500,2000,2500,3000,3500,4000,4500},
+    ylabel={Running Time (in second)},
+    xmin=1.0, xmax=1.8,
+    ymin=0, ymax=3000,
+    xtick={1.0,1.2,1.4,1.6,1.8},
+    ytick={500,1000,1500,2000,2500,3000},
     legend pos=north east,
     ymajorgrids=true,
     grid style={line width=.2pt,draw=gray!50},
@@ -24,28 +24,23 @@
     solid, every mark/.append style={solid, fill=gray}, mark=square
     ]
     coordinates {
-	(12,4011)
-	(13,2755)
-	(14,2563)
-	(15,2349)
-	(16,2316)
-	(17,2063)
-	(18,2052)
-	(19,1813)
+		(1.0  ,	2227.895)
+		(1.2,	1939.205)
+		(1.4,	1938.777)
+		(1.6,	1631.618)
+		(1.8,	1259.305)
+		
 };
     \addlegendentry{SUF-growth}
 \addplot[
     solid, every mark/.append style={solid, fill=black}, mark=*
     ]
     coordinates {
-	(12,1029)
-	(13,794)
-	(14,664)
-	(15,603)
-	(16,661)
-	(17,559)
-	(18,487)
-	(19,554)
+		(1.0 ,	191.309	)
+		(1.2,	164.057	)
+		(1.4,	148.466	)
+		(1.6,	117.228	)
+		(1.8,	58.768	)
 };
     \addlegendentry{USFP-growth}
  
