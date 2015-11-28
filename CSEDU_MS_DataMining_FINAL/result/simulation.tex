@@ -14,6 +14,12 @@ In this section we have provided experiment analysis. In the experiment we have 
 		\caption{Size of Database vs Running Time for T40I10D100K Dataset ~\cite{dataset}}
 		\label{result:g_t10_const_tran}
 		\end{figure}
+		\begin{figure}[h]
+		\centering
+			\input{result/kosarak/g_k_const_tran}
+		\caption{Size of Database vs Running Time for Kosarak Dataset ~\cite{dataset}}
+		\label{result:g_k_const_tran}
+		\end{figure}
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		\begin{figure}[h]
 		\centering
@@ -27,7 +33,13 @@ In this section we have provided experiment analysis. In the experiment we have 
 		\caption{Size of Database vs Total Nodes in Tree for T40I10D100K Dataset ~\cite{dataset}}
 		\label{result:g_t10_const_tran_mem}
 		\end{figure}
-
+		\begin{figure}[h]
+		\centering
+			\input{result/kosarak/g_k_const_tran_mem}
+		\caption{Size of Database vs Total Nodes in Tree for Kosarak Dataset ~\cite{dataset}}
+		\label{result:g_k_const_tran_mem}
+		\end{figure}
+		
 	\paragraph{Window Size Change Effect}For window size change effect we have experiment our algorithm in different angle. Experiment shows the window size change effect do not hamper performance and it is consistent. Figure \ref{result:g_m_const_batch} and figure \ref{result:g_t10_const_batch} shows effect of window size change effect on mushroom and T40I10D100K dataset.
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		\begin{figure}[h]
@@ -123,6 +135,26 @@ Here now we have compared our proposed approach with existing system. We have ch
 			\caption{Running Time vs Minimum Support (\%) for Chess Dataset ~\cite{dataset}}
 			\label{result:g_chess_total}
 			\end{figure}
+			\begin{figure}[h]
+			\centering
+				\input{result/kosarak/g_k_tree_construction_total}
+			\caption{Total Tree Construction Time vs Minimum Support (\%) for Kosarak Dataset ~\cite{dataset}}
+			\label{result:g_k_tree_construction_total}
+			\end{figure}
+			
+			\begin{figure}[h]
+			\centering
+				\input{result/kosarak/g_k_mining_total}
+			\caption{Total Tree Mining Time vs Minimum Support (\%) for Kosarak Dataset ~\cite{dataset}}
+			\label{result:g_k_mining_total}
+			\end{figure}
+			\begin{figure}[h]
+			\centering
+				\input{result/kosarak/g_k_total}
+			\caption{Running Time vs Minimum Support (\%) for Kosarak Dataset ~\cite{dataset}}
+			\label{result:g_k_total}
+			\end{figure}
+			
 \clearpage
 	\subsubsection{Memory Comparison}
 		As our proposed \emph{US-tree} have capability to share nodes more than \emph{SUF-growth} ~\cite{dataset}, we get much more gain in memory. The experimental result also indicates that very clearly. Figure \ref{result:g_m_memory_node} shows the memory comparison on mushroom dataset. Mushroom is dense database so we get  much more gain in memory. The graph clearly shows that with the increase of total transaction in the tree gives the much more gain. For chess dataset the the compactness of tree is also very impressive as this dataset is also compact (figure \ref{result:g_chess_memory_node}) the Dense dataset have more scope to share nodes more. Figure \ref{result:g_t10_memory_node} also shows that in T40I10D100K database we also gain the memory optimization. As the database is sparse, we get the memory gain less then dense one.
@@ -146,3 +178,9 @@ Here now we have compared our proposed approach with existing system. We have ch
 			\label{result:g_t10_memory_node}
 			\end{figure}
 		
+			\begin{figure}[h]
+			\centering
+				\input{result/kosarak/g_k_memory_node}
+			\caption{Avg Tree Node per window vs Frame Size for Kosarak Dataset ~\cite{dataset}}
+			\label{result:g_k_memory_node}
+			\end{figure}
