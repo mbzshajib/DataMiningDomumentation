@@ -24,7 +24,7 @@ In data mining domain, one of the most significant and interesting, important ar
 \begin{figure}
 \centering
   \includegraphics[width=.9\textwidth]{images/frequent_flow.jpg}
-\caption{Knowledge Discovery Process}
+\caption{Frequent Pattern Mining Process}
 \label{figure:frequent_flow}
 \end{figure}
 Many approaches have been developed and proposed for finding frequent item-sets in large data base. Apriori ~\cite{apriori} is the one of the major approaches that has been proposed two decades ago. FP-growth ~\cite{fp_growth} is the first tree structure based approach for finding such frequent patterns. For sequential item-set mining GSP ~\cite{gsp} , Prefix-Span ~\cite{prefix_span}, for closed pattern mining CLOSET ~\cite{closet}, CLOSET$+$ ~\cite{closet_plus}, CHARM ~\cite{charm}, TPF ~\cite{tpf}, others (~\cite{close_1}, ~\cite{close_2}) , for high utility pattern mining HUP-mining ~\cite{hup_mining}, for association rule mining ~\cite{ass_01}, ~\cite{ass_02}, ~\cite{ass_03}, ~\cite{ass_04}, ~\cite{ass_05}, ~\cite{ass_06}, ~\cite{ass_07}, constrain based pattern mining ~\cite{const_01} was proposed. In each of the approach item-set having support greater or equal to minimum support threshold is treated as frequent item-set.
@@ -43,11 +43,11 @@ Many approaches has been proposed for finding frequent patterns over uncertain d
 \subsection{Stream Data}
 In real-life with the enormous use of the internet, artificial computerized and artificially intelligent devices (smartphones, tablet PC, cars, smart cards etc.) the data source produces a stream millions of data each and every micro second. Storing these data in some storage is out of think nowadays. But this huge data is very valuable for getting interesting information. Moreover, once these data flooded away then can never be found again. The most important property of this kind of dataset is this dataset is unbounded and restless and cannot be defined previously how much data will come. Most recent data is most important but old one is not insignificant and cannot be ignored. This produces a great challenge for researchers to find interesting information from a continuous data stream.\\
 For example with the growth of smartphone users much more applications are hitting each and every second. From these usages and data flood finding user behavior to offer some promotional offer for increasing the sale of the online retailer is the very tough job. Another example can be the CCTV video footage of traffic camera. That produces a large number of data flood. In this regard, any sort of any terrorist activity prediction will be very much significant and necessary information for the government. But for a lot of continuous data makes this a very hard job.\\
-Stream data makes the database dynamic as there is no limit of data. To find frequent item-set in data stream several algorithms (~\cite{uncertain_01}, ~\cite{uncertain_02}, ~\cite{uncertain_03}, ~\cite{uncertain_04}, ~\cite{uncertain_05}, ~\cite{uncertain_06}) has been proposed. But most are for handling stream but certain data. The uncertainty property makes mining task more complex and complicated the data stream. FP-streaming ~\cite{suf_growth} and  SUF-growth ~\cite{suf_growth} has been proposed for finding frequent, interesting patterns from uncertain and stream data. But these approaches have to compromise runtime efficiency or correctness. However these SUF-growth ~\cite{suf_growth} is an exact approach to finding frequent patterns.
+Stream data makes the database dynamic as there is no limit of data. To find frequent item-set in data stream several algorithms (~\cite{uncertain_01}, ~\cite{uncertain_02}, ~\cite{uncertain_03}, ~\cite{uncertain_04}, ~\cite{uncertain_05}, ~\cite{uncertain_06}) has been proposed. But most are for handling stream but certain data. The uncertainty property makes mining task more complex and complicated the data stream. FP-streaming ~\cite{suf_growth} and SUF-growth ~\cite{suf_growth} has been proposed for finding frequent, interesting patterns from uncertain and stream data. But these approaches have to compromise runtime efficiency or correctness. However these SUF-growth ~\cite{suf_growth} is an exact approach to finding frequent patterns.
 \begin{figure}
 \centering
   \includegraphics[width=.9\textwidth]{images/stream_data.jpg}
-\caption{Types of Uncertainty}
+\caption{Stream Processing Steps}
 \label{figure:stream_data}
 \end{figure}
 
