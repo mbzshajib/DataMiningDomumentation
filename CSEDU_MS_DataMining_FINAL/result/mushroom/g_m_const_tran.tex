@@ -12,9 +12,9 @@
     xlabel={Size of Database (transaction)},
     ylabel={Running Time (ms)},
     xmin=1000, xmax=5000,
-    ymin=0, ymax=300,
+    ymin=0, ymax=500,
     xtick={1000,2000,3000,4000,5000},
-    ytick={100,200,300},
+    ytick={100,200,300,400},
     legend pos=north east,
     ymajorgrids=true,
     grid style={line width=.2pt,draw=gray!50},
@@ -32,6 +32,19 @@
 
 	};
     \addlegendentry{minimum support 12\%}
+	
+\addplot[
+    solid,color=gray, every mark/.append style={solid, fill=gray}, mark=square
+    ]
+    coordinates {
+		(1000,66)
+		(2000,102)
+		(3000,169)
+		(4000,255)
+		(5000,370)
+
+	};
+    \addlegendentry{minimum support 15\%}
 
 \end{axis}
 \end{tikzpicture}

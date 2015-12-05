@@ -6,15 +6,15 @@
 %\begin{document}
 \begin{tikzpicture}
 \begin{axis}[
-	title={\parbox{\linewidth}{\centering Avg Tree Node per Window vs Batch Size for T40I10D100K ~\cite{dataset}, Window Size = 5}},
+	title={\parbox{\linewidth}{\centering Avg Tree Node per Window vs Batch Size for T40I10D100K ~\cite{dataset}}},
 	width=12cm,
 	height=7cm,
-    xlabel={Frame Size },
-    ylabel={Node Count ($10^3$)},
-    xmin=7000, xmax=9000,
-    ymin=1100, ymax=2000,
-    xtick={7000,7500,8000,8500,9000},
-    ytick={1200,1400,1600,1800},
+    xlabel={Total Transaction (in thousands) },
+    ylabel={Total Memory (in MB) },
+    xmin=70, xmax=95,
+    ymin=90, ymax=170,
+    xtick={70,75,80,85,90,95},
+    ytick={90,120,140,160},
     legend pos=north east,
     ymajorgrids=true,
     grid style={line width=.2pt,draw=gray!50},
@@ -24,12 +24,12 @@
     solid, every mark/.append style={solid, fill=gray}, mark=square
     ]
     coordinates {
-			(7000,1369.555 )
-			(7500,1466.766 )
-			(8000,1564.122 )
-			(8500,1661.100 )
-			(9000,1758.412 )
-			(9500,1855.734 )
+			(70,106.996)
+			(75,114.591)
+			(80,122.197)
+			(85,129.773)
+			(90,137.375)
+			(95,144.979)
 
 	};
     \addlegendentry{SUF-growth}
@@ -37,12 +37,12 @@
     solid, every mark/.append style={solid, fill=black}, mark=*
     ]
     coordinates {
-		(7000,1199.510)
-		(7500,1291.388)
-		(8000,1383.378)
-		(8500,1474.984)
-		(9000,1566.912)
-		(9500,1658.773)
+		(70,93.711  )
+		(75,100.889 )
+		(80,108.076 )
+		(85,115.233 )
+		(90,122.415 )
+		(95,129.591 )
 
 };
     \addlegendentry{USFP-growth}

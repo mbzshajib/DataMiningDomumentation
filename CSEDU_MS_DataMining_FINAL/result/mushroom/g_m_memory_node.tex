@@ -6,15 +6,15 @@
 %\begin{document}
 \begin{tikzpicture}
 \begin{axis}[
-	title={\parbox{\linewidth}{\centering Avg Tree Node per Window vs Batch Size for Mushroom ~\cite{dataset}, Window Size = 2}},
+	title={\parbox{\linewidth}{\centering Total Memory vs Total Transaction (in thousands) for Mushroom ~\cite{dataset}}},
 	width=12cm,
 	height=7cm,
-    xlabel={Batch Size },
-    ylabel={Node Count ($10^3$)},
-    xmin=1000, xmax=7000,
-    ymin=0, ymax=200,
-    xtick={1000,2000,3000,4000,5000,6000,7000},
-    ytick={50,100,150,200},
+    xlabel={Total Transaction (in thousands) },
+    ylabel={Total Memory (in MB) },
+    xmin=1, xmax=7,
+    ymin=0, ymax=18,
+    xtick={1,2,3,4,5,6,7},
+    ytick={3,6,9,12,15},
     legend pos=north east,
     ymajorgrids=true,
     grid style={line width=.2pt,draw=gray!50},
@@ -24,13 +24,13 @@
     solid, every mark/.append style={solid, fill=gray}, mark=square
     ]
     coordinates {
-			(1000,22.597)
-			(2000,44.862)
-			(3000,67.033)
-			(4000,89.175)
-			(5000,111.313)
-			(6000,133.377)
-			(7000,155.435)
+			(1,1.807  )
+			(2,3.588  )
+			(3,5.362  )
+			(4,7.134     )
+			(5,8.905  )
+			(6,10.670 )
+			(7,12.434  )
 
 
 
@@ -40,13 +40,13 @@
     solid, every mark/.append style={solid, fill=black}, mark=*
     ]
     coordinates {
-			(1000,6.444)
-			(2000,10.187)
-			(3000,14.568)
-			(4000,18.362)
-			(5000,22.390)
-			(6000,25.416)
-			(7000,30.727)
+			(1,.5152  )
+			(2,.814  )
+			(3,1.165 )
+			(4,1.468 )
+			(5,1.791  )
+			(6,2.033 )
+			(7,2.458 )
 
 
 };
