@@ -26,23 +26,35 @@ In this section, we will discuss our proposed approach for mining frequent patte
     
     
 \section{Preliminaries}
-    \paragraph{Definition-1 : Uncertain Frequent Pattern} 
+    \paragraph{Definition-1 Uncertain Frequent Pattern: }
     Given DB = \emph{\{T\textsubscript{1}, T\textsubscript{2}, T\textsubscript{3} . . . T\textsubscript{N} \}} , an uncertain database with \emph{N} transactions where minimum expected support threshold is $\delta$. The problem is to mine frequent item-sets \emph{FI} $\subset$ DB, where $ExpSup(FI_i) \geq \delta $ and $FI_i \in FI$.
     
-    \paragraph{Definition-2 : Batch} 
+    \paragraph{Definition-2 Batch: }
     A group of consecutive transactions from a transaction \emph{DB}inserted in \emph{US-tree} at a time. Let table-\ref{table:uncertain_stream_transaction} batch size = \emph{3}. \emph{T\textsubscript{1}, T\textsubscript{2}, T\textsubscript{3}} is one batch and its batch-1. Then next three \emph{T\textsubscript{4}, T\textsubscript{5}, T\textsubscript{6}} is one batch and its batch-2.
     
-    \paragraph{Definition-3 : Window} Window is the size of batch consecutive one \emph{US-tree} can hold. Let table-\ref{table:transaction_batch} be an example of grouped transaction and batch number tagged. So for window size \emph{2} The in a certain time batch-1 and batch-2 will create a window. Then after some times when batch-3 comes then batch-2 and batch-3 will create the next window.
+    \paragraph{Definition-3 Window: } Window is the size of consecutive batchs one \emph{US-tree} can hold. Let table-\ref{table:transaction_batch} be an example of grouped transaction and batch number tagged. So for window size \emph{2} The in a certain time batch-1 and batch-2 will create a window. Then after some times when batch-3 comes then batch-2 and batch-3 will create the next window.
     
-    \paragraph{Definition-4 : U\textsuperscript{cap}} 
+    \paragraph{Definition-4 U\textsuperscript{cap} :}
     The following equation is for \emph{U\textsuperscript{cap}}    calculation.
     \input{example/eqn_cap}
     For transaction \emph{DB} example in table-\ref{table:uncertain_stream_transaction} for \emph{T\textsubscript{1}}, \emph{U\textsuperscript{cap}} of \emph{a{0.9}} is $0.9$ as a is the first item. For \emph{c(0.6)} \emph{U\textsuperscript{cap}} is $0.9*0.6=0.45$, \emph{d(0.50)} \emph{U\textsuperscript{cap}} is $0.9*0.5=0.45$ and \emph{e(0.2)} \emph{U\textsuperscript{cap}} is $0.9*0.2=0.18$. \emph{U\textsuperscript{cap}} is the upper bound of existential probability. As we are taking the max of all previous items coming in a particular order all items or item sets having existential probability must be less than or equal \emph{U\textsuperscript{cap}}. that is $\forall(i,j)\{ P(I_i)*P(I_j)\leq U_{cap}(I_j)\}$ where $i < j$. So support must be less than or equal \emph{U\textsubscript{cap}}.\\
     Calculated \emph{U\textsuperscript{cap}} should be the upper bound of two item's existential probability because we have taken the maximum value of item that has come earlier. So, by two item set support that can have maximum support value, is \emph{U\textsuperscript{cap}} value. Item set having \emph{U\textsuperscript{cap}} less than minimum support must frequent. Though this may cause some false positives but it is for sure that no false negative will insert into this. 
     \input{table/table_uncertain_transaction_batch}
-    \paragraph{Definition-5 : False Positive}
-    \paragraph{Definition-5 : False Negatives}
+	
+    \paragraph{Definition-5 : False Positive: } False positive is pattern which exists in frequent pattern set but actually not frequent. Probabilistic approach for mining frequent patterns sometimes generates false positive patterns. Let, \emph{\{a, ab, b, bc, c, d, cd, de, cde\}} be frequent pattern set found from any mining algorithm. Here, \emph{\{a, ab, b, bc, c, d, cd, de\}} is actual frequent pattern set, but \emph{\{ cde\}} is not frequent, then \emph{\{ cde\}} is false positive. Exact mining algorithms do not produces false positive patterns.
     
+	\paragraph{Definition-5 : False Negative: } False negative is pattern which does not exist in frequent pattern set but actually frequent. Probabilistic mining approaches sometimes produce false negative patterns. Let, \emph{\{a, ab, b, bc, c, d, cd, de, cde\}} be found frequent pattern set by any mining algorithm. Later it is found that, \emph{\{b\}} is actually frequent but not in frequent pattern set. So, \emph{\{ b\}} is false negative pattern. Exact mining algorithm does not generate false negative patterns.
+	
+	\paragraph{Theorem 1: } Let X be a $k$-itemset in transaction $T_j$ (where $k > 1$). The existential probability of any of its non-empty proper subset Y that shares the same suffix $x_r$ as X (i.e., $Y \subset X \subseteq T_j$) is always less than or equal to $U^{cap}(X_r$, $T_j)$.\\
+		\emph{\textbf{Proof:}}\\
+		Let'
+		$T_j = \{X_1$, $X_2$, $X_3$ . . . , $X_r$, . . . , $X_h$\}
+		$X = \{X_s$, . . . , xr\} be a k-itemset in $T_j$
+		$Y = \{X_t$, . . . , $X_r$\} be a $k_1$-itemset (where $k_1 < k$) and a proper subset of $X$ (i.e. $Y \subset X \subseteq T_j$).\\
+		$\prod_{(X \epsilon Y)\bigwedge (X\neq X_r)}P(X,T_j) \leq max_{1 \leq q \leq r-1}$ because $0< P(X, T_j)\leq 1$. So,\\
+		 $P(Y,T_j)=P(X_r,T_j)*\prod_{(X \epsilon Y)\bigwedge (X\neq X_r)}P(X,T_j)$\\
+		 $\leq P(X,T_j)*max_{1 \leq q \leq r-1}=U^{cap}(X$, $T_j)$
+ 
 \section{Mining Frequent Patterns from Uncertain Databases}
     Our proposed algorithm is divided into five parts. (1) Grouping transactions into batches and window and giving each item in a transaction a prefix value is called \emph{U\textsuperscript{cap}}. (2) Insert transaction into \emph {US-tree}. (3) Sliding the \emph {US-tree} (4) mining the \emph {US-tree} with \emph{USFP-growth} algorithm and (5) Eliminating false positive (not frequent but exists infrequent item set) . For simulating our approach we consider Table~\ref{table:uncertain_stream_transaction} as uncertain stream transaction data. For this simulation, we consider window size as 2 and batch size 3. That means 3 transactions creates a batch and 2 batches create a window. After completing window construction (inserting batch 1 and 2), the \emph {US-tree} will be full. When new batch comes we slide the window. That means we remove oldest batch batch-1 and put batch-2 as the old batch. Then insert new batch in the tree as batch-3. So for window size 2 the tree always contains at most 2 batches. Thus, the tree always holds the latest information. In next subsections, we will elaborately explain our approach of every step.
 
