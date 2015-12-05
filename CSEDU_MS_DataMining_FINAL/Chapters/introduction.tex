@@ -56,39 +56,36 @@ Stream data makes the database dynamic as there is no limit of data. To find fre
 Let us consider \emph{Google Search} ~\cite{google} service as our data source. If we analyze the data coming from source, we find that in each and every millisecond, thousands of people and intelligent devices (e.g. different smart applications of smartphones or PC) are searching in \emph{Google Search}. This search is a continuous process and never stops and we cannot predict earlier when the incoming will be fast and when it will be slow. We can think data incoming like stream. Now if we look at search criteria, we find that \emph{Google Search} service users (both human and machine) are not always searching exactly what she/he/it is looking for. There is much more search with partial key data or key words. For example, when a user searches in Google with key word \emph{Tom Cruise} we cannot surely tell that she/he/it wants to get information of personal life of \emph{Tom Cruise}, next up-coming movie, his movie list, awards he already got or his social activities. We can hardly say, if he is searching for Hollywood movie actor or any other person. This fact makes the task very difficult to find the exact intention of user. The search information is with noise and we do not know exactly that the search key word is with noise or not. So the found information from the \emph{Google Search} is uncertain. The whole scenario indicates to uncertain stream data. \\
 Now, if we want to find frequent searched patterns from \emph{Google Search} data then we have to find frequent patterns from these uncertain stream data. Now how can these patterns make us interested, is the first and foremost important question. Let’s consider, after finding frequent patterns, we get information that people are searching for baby food, baby wear for heavy winter, child specialist doctor etc. then we get many important decision. For online retailers the message can be such that if they discount on different products used by babies will increase their sale. For government, now this is heavy winter and much more children are being sick and need to take concerns. This information is really very much valuable.\\
 From this scenario it is clear that the gathered information form \emph{Google Search} is very much dynamic and people search criteria can be changed without any prediction and this criteria is always dynamic that makes the frequent patterns finding form found information very much difficult. Again keeping all search information is very much costly as lots of incoming data flow is coming each time. Moreover, the incoming data is not that much precise that we can get any direct conclusion from the search key words.
-
 \section{Aims and Objectives}
-Many algorithms have been proposed for mining frequent patterns over certain and uncertain data. Among them in uncertain data mining exact approaches either runtime or the probabilistic models suffers from false positives. Moreover, extraction knowledge from uncertain stream data suffers a lot. The findings are listed briefly below:
+Many algorithms and approaches have been proposed for mining frequent patterns over certain and uncertain data. Among them in uncertain data mining, exact approaches suffer from runtime optimization problem. The probabilistic model based approaches suffer from either huge false positives or false negative generation problem. Moreover, extraction knowledge from stream data is another challenge. It is one of the newest topics for researchers. The findings of challenges and difficulties of finding frequent item-set form uncertain data are given:
 \begin{itemize}
-    \item Existing algorithms for uncertain data mining suffers either from runtime compromise or the compactness of data storage
-    \item In probabilistic uncertain data modeling approach suffers from huge false positives with the frequent item-set.
+    \item Existing algorithms for uncertain data mining suffers either from runtime compromise or the compactness of data structure.
+    \item Probabilistic uncertain data modeling approach suffers from huge false positives or false negative with the frequent item-set.
     \item The proposed data structure in existing approaches for mining uncertain stream data suffers from memory optimization.
-    \item Reduction of huge false positives from candidate frequent item-set suffers from runtime inefficiency.
+    \item Reduction of huge false positives or false negatives from candidate frequent item-set suffers from runtime inefficiency.
 \end{itemize}
 To overcome these problems we have followed some objectives. They are given below:
 \begin{itemize}
-    \item A complete new efficient, robust, scalable approach work with the new data structure that will memory efficient.
-    \item Memory and runtime efficient data-structure for both uncertain dynamic database and static databases.
+    \item A completely new, correct, efficient, robust, scalable and exact approach, with the new data structure, that will memory efficient.
+    \item Design and propose a new memory and runtime efficient data-structure, which will work for both uncertain dynamic database and static databases.
     \item Attach any meta-data with each item of transaction that will make the runtime storage compact as much as possible.
     \item Most recent data is more significant - with this characteristic storing as much as recent data that has more probability to be important.
-    \item Giving users the opportunity to keep her/his recent information data as she/he wishes.
-
+   \item Giving user the opportunity to keep her/his recent information, she/he wishes. 
 \end{itemize}
-
 
 \section{Our Contribution}
 Our key contributions of this paper are given below:
 \begin{itemize}
-\item We have introduced a prefix value for each item in a transaction which always maintain upper bound of probability. That helps us to make compact pattern tree construction.
-\item A new approach \emph{US-tree}, that is very much compact and very memory efficient.
-\item A new mining algorithm \emph{USFP-growth}, that is very efficient and reduce mining time surprisingly.
-\end{itemize}
-
-
+	\item We have introduced a prefix value, \emph{U\textsuperscript{cap}} for each item in a transaction which always maintains upper bound of probability. That helps us to make compact pattern tree construction.
+	\item A new data-structure \emph{US-tree}, that is very much compact and very memory efficient.
+	\item Propose a data-structure will follow the partial downward closure property.
+	\item A new mining algorithm \emph{USFP-growth} algorithm, that will reduce mining time surprisingly.
+	\item Propose an approach, which will both runtime and memory efficient, scalable and will have wide range of applicable area.
+	\end{itemize}
 \section{Thesis Organization}
 	We have carried out the thesis work to consummate the objectives. An outline of rest of the chapters is provided as follows:
-	\paragraph{Chapter 2} describes the necessary background study and existing approaches.
+	\paragraph{Chapter 2} describes the necessary background studies and existing approaches.
 	\paragraph{Chapter 3} provides the details of our proposed approach with required analysis.
 	\paragraph{Chapter 4} presents the results of experimental results in detail with comparison and analysis.
-	\paragraph{Chapter 5} shows several real-life applications for our proposed approach and ends the thesis with a brief conclusion and future scopes.
+	\paragraph{Chapter 5} ends the thesis with a brief conclusion and future scopes.
 %\end{document}
