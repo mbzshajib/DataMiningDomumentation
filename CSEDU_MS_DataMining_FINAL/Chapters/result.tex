@@ -46,7 +46,7 @@ For our experimental evaluation, we used both real life database and synthetic d
         kosarak        &    real    &    sparse    &    990002    &    41270                        \\ \hline
         pumsb star    &    real    &    sparse    &    49046    &    2088                        \\ \hline
         chess        &    real    &    dense    &    3196    &    75                            \\ \hline
-        T10I4D100K    &    synthetic    &    sparse    &    100000    &    869                        \\ \hline
+        T40I10D100K    &    synthetic    &    sparse    &    100000    &    869                        \\ \hline
             \end{tabular}
         \caption{Dataset from repository ~\cite{dataset}}
         \label{table:dataset}
@@ -78,7 +78,7 @@ For real life data sets we have used mushroom ~\cite{dataset}, chess ~\cite{data
 
 
 \subsection{Synthetic Data Set}
-For synthetic data sets, we have used T10I4D100K ~\cite{dataset}. It is an IBM generated transaction data set widely used for frequent pattern mining. It is a sparse data set with 100000 transactions and 869 distinct items. For probability assignment to each item, we used the normal distribution for getting the existential probability.
+For synthetic data sets, we have used T40I10D100K ~\cite{dataset}. It is an IBM generated transaction data set widely used for frequent pattern mining. It is a sparse data set with 100000 transactions and 869 distinct items. For probability assignment to each item, we used the normal distribution for getting the existential probability.
         \begin{figure}[h]
         \centering
             \input{result/t10/g_dataset_t10}
